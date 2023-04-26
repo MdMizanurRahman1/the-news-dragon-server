@@ -35,7 +35,7 @@ app.get('/news/:id', (req, res) => {
 app.get('/categories/:id', (req, res) => {
     const id = parseInt(req.params.id);
     if (id === 0) {
-        req.send(id)
+        res.send(news)
     }
     else {
         const categoryNews = news.filter(n => parseInt(n.category_id) === id);
